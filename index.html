@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b70">
+  <meta name="description" content="Oro Digital School — online learning for grades 9–12">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+  <title>Oro Digital School</title>
+</head>
+<body>
+  <main class="shell">
+    <div id="app" aria-live="polite">
+      <h1>Oro Digital School</h1>
+      <p>Loading application…</p>
+    </div>
+    <p id="toast" role="status" hidden></p>
+  </main>
+  <script type="module" src="./app.js"></script>
+  <script>
+    // Service workers work on HTTPS websites or localhost, not ordinary file:// pages.
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

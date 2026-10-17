@@ -1,2 +1,0 @@
-# Oro-digital-school-
-Orodigitalschool 
